@@ -179,6 +179,7 @@ def chunk_text(text, chunk_size=400, overlap=80):
 def store_in_db(filename,filepath,metadata):
     conn = mysql.connector.connect(
         host=os.getenv("host"), 
+        port=int(os.getenv("port", 24806)),
         user=os.getenv("user"),  
         password=os.getenv("password"),
         database=os.getenv("database"),
@@ -278,6 +279,7 @@ Metadata:
         print(f"Error sending email: {e}")
 
  
+
 
 
 
